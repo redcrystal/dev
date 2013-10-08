@@ -350,19 +350,19 @@
                 // currently offsetY not used
                 if (dummyArray[tabValue].control === 'y') {
                     if(tabValue !=4) {
-                        dummyArray[tabValue].rotation.y = dummyArray[tabValue].rotation.y + oneDegree;
+                        dummyArray[tabValue].rotation.y = dummyArray[tabValue].rotation.y + oneDegree*offsetX;
                     } else {
-                        dummyArray[tabValue].rotation.y = dummyArray[tabValue].rotation.y + oneDegree;
-                        dummyF6.rotation.y =  dummyF6.rotation.y - oneDegree;
-                        dummyF2.rotation.y =  dummyF2.rotation.y - oneDegree;
-                        dummyF5.rotation.y =  dummyF5.rotation.y + oneDegree;
-                        dummyF3.rotation.y =  dummyF3.rotation.y + oneDegree;
-                        dummyF4.rotation.y =  dummyF4.rotation.y - oneDegree;
+                        dummyArray[tabValue].rotation.y = dummyArray[tabValue].rotation.y + oneDegree*offsetX;
+                        dummyF6.rotation.y =  dummyF6.rotation.y - oneDegree*offsetX;
+                        dummyF2.rotation.y =  dummyF2.rotation.y - oneDegree*offsetX;
+                        dummyF5.rotation.y =  dummyF5.rotation.y + oneDegree*offsetX;
+                        dummyF3.rotation.y =  dummyF3.rotation.y + oneDegree*offsetX;
+                        dummyF4.rotation.y =  dummyF4.rotation.y - oneDegree*offsetX;
                     }
 
                 }
                 if (dummyArray[tabValue].control === 'x') {
-                    dummyArray[tabValue].rotation.x = dummyArray[tabValue].rotation.x + oneDegree;
+                    dummyArray[tabValue].rotation.x = dummyArray[tabValue].rotation.x + oneDegree*offsetX;
                 }
                 //robotStat.update(dummyArray);
             }
