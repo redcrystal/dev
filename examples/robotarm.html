@@ -48,10 +48,10 @@
 
             var base, body, arm1, arm2, hand,f1,f2,f3,f4,f5,f6;
 
-            var dummy0 = new THREE.Object3D();
-            var dummy1 = new THREE.Object3D();
-            var dummy2 = new THREE.Object3D();
-            var dummy3 = new THREE.Object3D();
+            var dummyBody = new THREE.Object3D();
+            var dummyArm1 = new THREE.Object3D();
+            var dummyArm2 = new THREE.Object3D();
+            var dummyHand = new THREE.Object3D();
             var dummyF1 = new THREE.Object3D();
             var dummyF2 = new THREE.Object3D();
             var dummyF3 = new THREE.Object3D();
@@ -120,7 +120,7 @@
                     createAxis(v(0, 0, -axisLength), v(0, 0, axisLength), 0x0000FF);
                 };
 
-//To use enter the axis length
+                //To use enter the axis length
                 debugaxis(100);
 
 
@@ -132,26 +132,26 @@
                     base=object;
                     //base.position.y = -0.239;
 
-                    base.add(dummy0);
+                    base.add(dummyBody);
                     // control body location by moving joint x,y,z
 
-                    dummy0.position.x = +0.033;
-                    dummy0.position.y = 0.297;
-                    dummy0.control = 'y'; // y axis is controlled
+                    dummyBody.position.x = +0.033;
+                    dummyBody.position.y = 0.297;
+                    dummyBody.control = 'y'; // y axis is controlled
                     // add all dummy joints to an array so i can control them easier later
-                    dummyArray.push(dummy0);
+                    dummyArray.push(dummyBody);
 
 				} );
                 loader.load( 'models/obj/body.obj', 'models/obj/body.mtl', function ( object ) {
                     body=object;
                     object.position.x = -0.033;
-                    dummy0.add(body);
+                    dummyBody.add(body);
                     // adding joint for arm1
-                    dummy0.add(dummy1);
+                    dummyBody.add(dummyArm1);
 
-                    dummy1.position.y = 0.11;
-                    dummy1.control = 'x'; // z axis is controlled
-                    dummyArray.push(dummy1);
+                    dummyArm1.position.y = 0.11;
+                    dummyArm1.control = 'x'; // z axis is controlled
+                    dummyArray.push(dummyArm1);
 
 
                     //scene.add( base );
@@ -163,15 +163,15 @@
                     //body.position.x = +0.328;
                     //body.position.z = +0.328;
 
-                    dummy1.add(arm1);
+                    dummyArm1.add(arm1);
 
                     // add joint for arm 2
-                    dummy1.add(dummy2);
+                    dummyArm1.add(dummyArm2);
                     // these offsets are set manually
-                    dummy2.position.z = -0.28;
-                    dummy2.position.y = 0.755;
-                    dummy2.control = 'x';
-                    dummyArray.push(dummy2);
+                    dummyArm2.position.z = -0.28;
+                    dummyArm2.position.y = 0.755;
+                    dummyArm2.control = 'x';
+                    dummyArray.push(dummyArm2);
 
 
                     //scene.add( base );
@@ -179,18 +179,18 @@
                 } );
 
                 loader.load( 'models/obj/arm2.obj', 'models/obj/arm2.mtl', function ( object ) {
-                    arm1=object;
+                    arm2=object;
                     //body.position.x = +0.328;
                     //body.position.z = +0.328;
 
-                    dummy2.add(arm1);
+                    dummyArm2.add(arm2);
 
-                    dummy2.add(dummy3);
+                    dummyArm2.add(dummyHand);
                     // these offsets are set manually
-                    dummy3.position.z = 0.614;
-                    dummy3.position.y = -0.111;
-                    dummy3.control = 'x';
-                    dummyArray.push(dummy3);
+                    dummyHand.position.z = 0.614;
+                    dummyHand.position.y = -0.111;
+                    dummyHand.control = 'x';
+                    dummyArray.push(dummyHand);
 
 
                     //scene.add( base );
@@ -199,28 +199,28 @@
 
                 loader.load( 'models/obj/hand/hand.obj', 'models/obj/hand/hand.mtl', function ( object ) {
                     hand=object;
-                    dummy3.add(hand);
+                    dummyHand.add(hand);
 
-                    dummy3.add(dummyF1);
+                    dummyHand.add(dummyF1);
                     // these offsets are set manually
                     dummyF1.position.x = 0.004;
                     dummyF1.position.z = 0.275;
                     dummyF1.control = 'y';
                     dummyArray.push(dummyF1);
 
-                    dummy3.add(dummyF6);
+                    dummyHand.add(dummyF6);
 
                     dummyF6.position.x = 0.086;
                     dummyF6.position.z = 0.274;
                     dummyF6.control = 'y';
 
-                    dummy3.add(dummyF3);
+                    dummyHand.add(dummyF3);
 
                     dummyF3.position.x = 0.022;
                     dummyF3.position.z = 0.378;
                     dummyF3.control = 'y';
 
-                    dummy3.add(dummyF4);
+                    dummyHand.add(dummyF4);
 
                     dummyF4.position.x = 0.055;
                     dummyF4.position.z = 0.377;
